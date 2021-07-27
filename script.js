@@ -119,8 +119,8 @@ function endFunc() {
     startPage.remove();
     endOfGame.remove();
     clearInterval(timeInter);
-    hihgScoreInputName.value = ""
-    endOfGameSect.innerHTML = "Score: " + + "Possible: " + questions.length
+    highScoreInputName.value = ""
+    endOfGameSect.innerHTML = "Score: " + score + "Possible: " + questions.length
 }
 //Adds User score to the score page
 submitScore.addEventListener("click", function saveScore() {
