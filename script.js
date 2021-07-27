@@ -20,7 +20,7 @@ window.onload = function () {
     var endOfGameSect = document.getElementById("endOfGame");
     var startPage = document.getElementById("quiz");
     var highScorePage = document.getElementById("highScorePage");
-    var hihgScoreInputName = document.getElementById("intials");
+    var highScoreInputName = document.getElementById("intials");
     var highScoreName = document.getElementById("highScoreI");
     var scorePageBtn = document.getElementById("scorePage");
     var endGame = document.getElementById("gameFin");
@@ -87,8 +87,8 @@ window.onload = function () {
         if (currentQuestion === questionlength) {
             return scoreBoard();
         };
-        var quersionNum = questions[currentQuestion];
-        answerChoices.innerHTML = "<p>" + quersionNum.question + "</p>";
+        var questionNum = questions[currentQuestion];
+        answerChoices.innerHTML = "<p>" + questionNum.question + "</p>";
         buttonA.innerHTML = currentQuestion.a;
         buttonB.innerHTML = currentQuestion.b;
         buttonC.innerHTML = currentQuestion.c;
@@ -96,7 +96,7 @@ window.onload = function () {
     };
 
     // Start function:
-    function start() {
+    function startQuiz() {
         endOfGameSect.style.display = "none";
         quiz.style.display = "none";
         generateQuestions();
@@ -107,13 +107,12 @@ window.onload = function () {
             quizCountDown.textContent = "Time Remaining: " + time;
 
             if (time === 0) {
-                clearInterval(timeInterval);
-                showScore();
+                clearInterval(timeInter);
+                endFunc();
             }
         }, 1000);
         startPage.style.display = "block";
     }
-    start();
 };
 //End function show score screen: 
 function endFunc() {
@@ -125,13 +124,13 @@ function endFunc() {
 }
 //Adds User score to the score page
 submitScore.addEventListener("click", function saveScore() {
-    if (hihgScoreInputName === "") {
+    if (highScoreInputName === "") {
         alert("Please Enter a Value");
         return false;
     }
     else {
         var savedScores = JSON.parse(localStorage.getItem("savedScores")) || [];
-        var user = hihgScoreInputName.value.trim();
+        var user = highScoreInputName.value.trim();
         var highestScore = {
             name: user,
             score: score
@@ -206,4 +205,4 @@ function check(answer) {
         endFunc()
     }
 };
-startButton.addEventListener("click",start())
+startButton.addEventListener("click",startQuiz)
