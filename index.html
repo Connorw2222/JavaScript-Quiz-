@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz!</title>
-    <script src="script.js"></script>
+    <script src="scipt1.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,41 +19,43 @@
             </h1>
             <button id="start">Start!</button>
             <button id="scoresPage">View High Scores</button>
+            <div id="countDown">Time Remaining: </div>
+            <div id="score"> Current Score: </div>
         </section>
         <!-- Quiz -->
-        <section id="quiz">
-            <div id="countDown">Time Remaining: </div>
+        <section id="quiz" style="display : none">
+
             <div id="currentQ"></div>
             <div id="answerChoices">
-                <button id="a">A</button>
-                <button id="b">B</button>
-                <button id="c">C</button>
-                <button id="d">D</button>
+                <button class="answer-btns" id="0">A</button>
+                <button class="answer-btns" id="1">B</button>
+                <button class="answer-btns" id="2">C</button>
+                <button class="answer-btns" id="3">D</button>
             </div>
             <div id="results"></div>
         </section>
         <!-- Score Submission -->
-        <section id="endOfGame">
+        <!-- <section id="endOfGame">
             <div id="yourScore"></div>
             <input type="text" size="36" placeholder="Enter your intials Here!!" name="intials" id="intials" />
             <button id="submit">Post Your Score!</button>
         </section>
-        <div id = "scoreAndEnd">
-            <!-- High Score Page -->
-            <section id="highScorePage">
+        <div id="scoreAndEnd"> -->
+        <!-- High Score Page -->
+        <!-- <section id="highScorePage">
                 <article id="highScoreHead">
                     <h2>Player intials:</h2>
                     <h2>Score:</h2>
                 </article>
                 <section id="highScoreI"></section>
                 <section id="highScore"></section>
-            </section>
-            <!-- End of Game -->
-            <section id="gameFin">
+            </section> -->
+        <!-- End of Game -->
+        <!-- <section id="gameFin">
                 <button id="newRounds">Play Again?</button>
                 <button id="clearHighScores">Clear High Scores?</button>
-            </section>
-        </div>
+            </section> -->
+    </div>
     </div>
 </body>
 
